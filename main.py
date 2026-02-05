@@ -7,13 +7,9 @@ def main():
     vowels = 'аеёиоуыэюя'
     simbols = string.punctuation
 
-    cleaned_chars = []
-    for char in text_low:
-        if char in simbols:
-            cleaned_chars.append(' ')
-        else:
-            cleaned_chars.append(char)
+    cleaned_chars = [char for char in text_low if char not in simbols]
     cleaned_text = ''.join(cleaned_chars)
+
     # 1
     words = cleaned_text.split()
     word_count = len(words)
